@@ -1,0 +1,27 @@
+Tabelas: Armazenam dados em linhas e colunas, organizando as informações de maneira estruturada.
+
+Views: São consultas pré-definidas que retornam resultados como se fossem tabelas, úteis para simplificar consultas complexas ou ocultar dados sensíveis.
+
+Procedures: São blocos de código SQL que podem aceitar parâmetros e executar uma série de operações, podendo ser reutilizáveis.
+
+Functions: Semelhantes às procedures, mas retornam um valor específico e são usadas principalmente em consultas SQL.
+
+Índices: Estruturas que melhoram o desempenho das consultas ao agilizar a busca por registros específicos em uma tabela.
+
+Triggers: São ações automáticas que ocorrem em resposta a eventos específicos, como a inserção, atualização ou exclusão de registros em uma tabela.
+
+Sequences: Geram números sequenciais automaticamente, úteis para criar chaves primárias únicas ou identificadores exclusivos.
+
+Índices Compostos: Índices que envolvem múltiplas colunas em uma tabela para melhorar o desempenho de consultas complexas.
+
+Chaves Estrangeiras (Foreign Keys): Restrições que estabelecem uma relação entre duas tabelas, garantindo a integridade referencial dos dados.
+
+Visões Materializadas (Materialized Views): São visões que armazenam fisicamente os resultados de uma consulta, sendo atualizadas periodicamente para refletir alterações nos dados originais.
+
+Sinônimos: São apelidos para objetos de banco de dados, facilitando o acesso a esses objetos sem precisar especificar o esquema ou nome completo.
+
+Partições: Divisões lógicas ou físicas de uma tabela em subconjuntos menores, o que pode melhorar o desempenho e facilitar a administração de grandes conjuntos de dados.
+
+Triggers de Auditoria: Triggers específicas para registrar e auditar alterações em dados sensíveis, como quem fez a alteração e quando.
+
+Índices Bitmap: Índices otimizados para consultas que envolvem múltiplas colunas com baixa cardinalidade, como em campos booleanos ou enumerações.
