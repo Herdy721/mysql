@@ -83,3 +83,68 @@ Criando tabelas:
 
 Apagando tabelas:
     DROP TABLE `sucos`.`tbcliente3`;
+
+
+Inserindo conteudo na tabela:
+use sucos;
+
+insert into tbproduto (
+PRODUTO, NOME, EMBALAGEM,TAMANHO, SABOR,PRECO_LISTA) values (
+'1037797','Clean - 2 Litros - Laranja', 'lata', '2 Litros','Laranja',16.01);
+insert into tbproduto (
+PRODUTO, NOME, EMBALAGEM,TAMANHO, SABOR,PRECO_LISTA) values (
+'1000889','Sabor da montanha- 700 ml - Uva', 'Garrafa', '700 ml','Uva',6.31);
+
+select * from tbproduto;
+
+
+
+Atualizando conteudo na tabela:
+UPDATE tbproduto SET EMBALAGEM = 'PET', PRECO_LISTA = 10.00 WHERE PRODUTO = '1037797';
+
+Excluindo conteudo na tabela:
+DELETE FROM tbproduto where PRODUTO = '1000889';
+
+Criando chave primária:
+ALTER TABLE tbproduto add primary key (PRODUTO);
+
+Criando nova coluna:
+ALTER TABLE tbcliente add column (DATA_NASCIMENTO DATE);
+
+
+tipo data: '1989-02-01'
+
+insert into tbcliente (CPF, NOME, ENDERECO1, ENDERECO2, BAIRRO, CIDADE, ESTADO, CEP, IDADE, SEXO, LIMITE_CREDITO, VOLUME_COMPRA, PRIMEIRA_COMPRA, DATA_NASCIMENTO) 
+value ('12311120011', 'Ramon Tester', 'Rua testes', 'Numero 19', 'POSSE', 'RJ', 'RJ', '2332123', '35', 'M', 10000.00, 2000, 0, '1989-02-01')
+
+Selects:
+select * from tbproduto;
+select CPF, NOME, SEXO from tbcliente;
+select CPF, NOME, SEXO from tbcliente LIMIT 2;
+select CPF as CLI_CPF, NOME as CLI_NOME, SEXO from tbcliente;
+
+Filtrando registros:
+select * from tbproduto where EMBALAGEM = 'PET';
+select * from tbproduto where SABOR = 'Laranja' AND EMBALAGEM = 'PET';
+update tbproduto set EMBALAGEM = 'PETT' where SABOR = 'Laranja' AND EMBALAGEM = 'PET';
+select * from tbproduto where SABOR = 'Laranja' OR EMBALAGEM = 'PET';   OR = OU
+
+
+Calculando em filtro:
+select * from tbcliente where IDADE = 22;
+select * from tbcliente where IDADE > 22;
+select * from tbcliente where IDADE >= 22; Maior e Igual
+select * from tbcliente where IDADE <= 22;
+select * from tbcliente where IDADE < 22;
+select * from tbcliente where IDADE <> 22;  Diferente
+select * from tbcliente where IDADE BETWEEN 22 and 23;  entre
+
+FLOAT(1.2222) não funciona com =
+
+Filtro com data:
+select * from tbcliente where DATA_NASCIMENTO > '1995-01-13';
+select * from tbcliente where YEAR(DATA_NASCIMENTO) = 1995;
+
+
+
+
