@@ -25,3 +25,61 @@ Partições: Divisões lógicas ou físicas de uma tabela em subconjuntos menore
 Triggers de Auditoria: Triggers específicas para registrar e auditar alterações em dados sensíveis, como quem fez a alteração e quando.
 
 Índices Bitmap: Índices otimizados para consultas que envolvem múltiplas colunas com baixa cardinalidade, como em campos booleanos ou enumerações.
+
+
+
+Criando um BD: exemplo [create database alura_curso;] ou [CREATE SCHEMA `alura` DEFAULT CHARACTER SET utf8 ;]
+
+        CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
+            [create_option] ...
+
+        create_option: [DEFAULT] {
+            CHARACTER SET [=] charset_name
+        | COLLATE [=] collation_name
+        | ENCRYPTION [=] {'Y' | 'N'}
+        }
+
+Apagando um BD: [drop database alura_curso;]
+
+Comandos via linha de comando mysql:
+        mysql> USE jogoteca;
+        Database changed
+        mysql> select * from jogos;
+        +----+-----------------+----------------+---------+
+        | id | nome            | categoria      | console |
+        +----+-----------------+----------------+---------+
+        |  1 | Tetris          | Puzzle         | Atari   |
+        |  2 | God of War      | Hack and Slash | PS2     |
+        |  3 | Mortal Kombat I | Luta           | PS2     |
+        |  4 | Need for Speed  | HCorrida       | PC      |
+        +----+-----------------+----------------+---------+
+        4 rows in set (0.00 sec)
+
+        mysql> SELECT DATABASE();
+        +------------+
+        | DATABASE() |
+        +------------+
+        | jogoteca   |
+        +------------+
+        1 row in set (0.00 sec)
+
+
+Criando tabelas:
+    create table `sucos`.`tbCliente`     -- base.Tabela
+    (CPF varchar(11),          -- Colunas
+    NOME varchar(100),
+    ENDERECO1 varchar(150),
+    ENDERECO2 varchar(150),
+    BAIRRO varchar(50),
+    CIDADE varchar(50),
+    ESTADO varchar(50),
+    CEP varchar(8),
+    IDADE SMALLINT,
+    SEXO varchar(1),
+    LIMITE_CREDITO FLOAT,
+    VOLUME_COMPRA FLOAT,
+    PRIMEIRA_COMPRA BIT(1))
+
+
+Apagando tabelas:
+    DROP TABLE `sucos`.`tbcliente3`;
