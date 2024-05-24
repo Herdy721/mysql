@@ -146,5 +146,17 @@ select * from tbcliente where DATA_NASCIMENTO > '1995-01-13';
 select * from tbcliente where YEAR(DATA_NASCIMENTO) = 1995;
 
 
+# Exemplo de consulta
+
+select JSON_EXTRACT(doc, "$.government.HeadOfState") as HeadOfState,
+SUM( JSON_EXTRACT(doc, "$.geography")) as geography,  # Somar
+AVG( JSON_EXTRACT(doc, "$.geography")) as geography from countryinfo  # MEDIA
+WHERE JSON_EXTRACT(doc, "$.geography")) LIKE ('%exempl%)  # Quando (filtro)
+AND JSON_EXTRACT(doc, "$.geography"))  >= 10000000 # e quando (filtro)
+GROUP BY JSON_EXTRACT(doc, "$.geofraphgy.Continent") # Agrupando por
+ORDER BY 2; # Ordene
+
+
+
 
 
